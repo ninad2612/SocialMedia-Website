@@ -36,7 +36,7 @@ def register_page(request):
         )
 
         messages.success(request, "Registration successful! You can now log in.")
-        return redirect('/login/')  # Redirect to login page after successful registration
+        return redirect('')  # Redirect to login page after successful registration
 
     return render(request, 'register.html')
 
@@ -57,7 +57,7 @@ def login_page(request):
             return redirect('/home/')  # Redirect to home page
         else:
             messages.error(request, "Invalid username or password.")
-            return redirect('/login/')  # Redirect back to login if authentication fails
+            return redirect('')  # Redirect back to login if authentication fails
 
     return render(request, 'login.html')
 
@@ -65,6 +65,6 @@ from django.contrib.auth import logout
 
 def logout_page(request):
     logout(request)  # Log the user out
-    return redirect('/login/')
+    return redirect('')
 
 
