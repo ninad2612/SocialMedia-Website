@@ -1,0 +1,241 @@
+/* General Container Styles */
+.profile-container {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    justify-content: flex-start; /* Align items to the start */
+    margin: 20px; /* Margin around the container */
+    padding: 15px; /* Padding inside the container */
+    border: 1px solid #ccc; /* Light border around the container */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Profile Picture Styling */
+.profile-picture {
+    width: 100px; /* Size of the profile picture */
+    height: 100px; /* Size of the profile picture */
+    border-radius: 50%; /* Makes the image circular */
+    overflow: hidden; /* Ensures that the image stays within bounds */
+    border: 2px solid #007bff; /* Primary color border */
+    margin-right: 15px; /* Space between image and text */
+}
+
+/* Responsive Image Styling */
+.profile-picture img {
+    width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure image covers the area */
+}
+
+/* Username Container to manage alignment */
+.username-container {
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space between username and logout button */
+    align-items: center; /* Center items vertically */
+    width: 100%; /* Allow it to take up full width */
+}
+
+/* Text and Title Styles */
+.username {
+    font-size: 24px; /* Style for the username */
+    font-weight: bold; /* Make the username bold */
+    color: #333; /* Dark color for better contrast */
+    margin-right: 10px; /* Space between username and logout button */
+}
+
+/* Button Styles */
+.btn {
+    padding: 10px 15px; /* Padding inside the button */
+    font-size: 16px; /* Font size for button text */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #007bff; /* Primary button color */
+    color: white; /* Button text color */
+    text-decoration: none; /* Remove underline from links */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Button Hover Effect */
+.btn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Feed Title Styles */
+.feed-title {
+    margin-top: 30px; /* Top margin for spacing */
+    margin-bottom: 15px; /* Bottom margin for spacing */
+    font-size: 28px; /* Larger font size for the feed title */
+    font-weight: bold; /* Make the title bold */
+    color: #007bff; /* Primary color for title */
+}
+
+/* Card Styles for Posts */
+.card {
+    border: 1px solid #ddd; /* Light border for cards */
+    border-radius: 8px; /* Rounded corners for cards */
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for cards */
+    margin-bottom: 20px; /* Space between cards */
+    overflow: hidden; /* Ensure content stays within bounds */
+}
+
+.card-body {
+    padding: 15px; /* Padding inside the card */
+}
+
+.card-title {
+    font-size: 20px; /* Font size for card title */
+    font-weight: bold; /* Make card title bold */
+}
+
+.card-text {
+    font-size: 14px; /* Font size for card text */
+    color: #666; /* Lighter color for card text */
+}
+
+form {
+    background-color: #fff; /* White background for the form */
+    padding: 20px; /* Padding inside the form */
+    border-radius: 8px; /* Rounded corners for the form */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin: 20px 0; /* Margin around the form */
+}
+
+h1 {
+    color: #007bff; /* Primary color for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+label {
+    display: block; /* Labels on their own line */
+    margin: 10px 0 5px; /* Space around labels */
+    font-weight: bold; /* Bold labels for emphasis */
+    color: #333; /* Dark color for labels */
+}
+
+input[type="file"], textarea {
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Padding inside inputs */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    margin-bottom: 15px; /* Space below inputs */
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resizing of the textarea */
+    min-height: 100px; /* Minimum height for the textarea */
+}
+
+button {
+    padding: 10px 15px; /* Padding inside the button */
+    background-color: #007bff; /* Primary button color */
+    color: white; /* Button text color */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Preview Styles for Selected Files */
+.preview-container {
+    margin-top: 20px; /* Space above the preview */
+}
+
+.preview-container img,
+.preview-container video {
+    width: 100%; /* Full width for previews */
+    border: 1px solid #ccc; /* Light border around previews */
+    border-radius: 4px; /* Rounded corners */
+    margin-top: 10px; /* Space above previews */
+}
+
+/* General Container Styles */
+.container {
+    max-width: 800px; /* Limit the width of the container */
+    margin: auto; /* Center the container */
+}
+
+/* Card Image and Video */
+.card-img-top {
+    border-top-left-radius: 8px; /* Round top corners */
+    border-top-right-radius: 8px; /* Round top corners */
+    width: 100%; /* Ensure images/videos take full width */
+}
+
+/* Alert Styles */
+.alert {
+    text-align: center; /* Center the alert message */
+    font-size: 16px; /* Font size for alert text */
+    margin-top: 20px; /* Margin above the alert */
+}
+
+.footer {
+    clear: both; /* Ensure the footer does not overlap with floating elements */
+    text-align: center; /* Center the text */
+    padding: 20px; /* Add padding for spacing */
+    background-color: #f1f1f1; /* Background color */
+    width: 100%; /* Full width */
+    position: relative; /* Normal flow positioning */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin-top: 20px; /* Add space above the footer */
+}
+
+/* Unique styles for search results */
+/* Profile Card Styling */
+.profile-card {
+    display: flex;
+    
+}
+
+.profile-picture-container {
+    
+    margin-right: 5px; /* Space between the picture and details */
+    flex-shrink: 0;
+}
+
+.profile-picture {
+    width: 100px; /* Adjust width as necessary */
+    height: 100px; /* Adjust height as necessary */
+    border-radius: 50%; /* Circular image */
+    overflow: hidden; /* Ensures image stays within bounds */
+    margin-bottom: 5px; /* Reduce space between image and username */
+}
+
+.user-details {
+    flex-grow: 1; /* Allow this container to take up the remaining space */
+    padding-left: 15px; /* Space between image and text */
+}
+
+.user-details .btn {
+    margin-top: 10px; /* Add space above the button */
+    
+    
+}
+/* CSS for user profile */
+.profile-img {
+    width: 150px;          /* Adjust the size as needed */
+    height: 150px;         /* Maintain the aspect ratio */
+    border-radius: 50%;    /* Makes the image circular */
+    object-fit: cover;     /* Ensures the image covers the area without distortion */
+}
+
+#profile-card {
+    margin-top: 20px; /* Margin for the profile card */
+}
+
+#profile-username {
+    font-size: 2em; /* Style for the username */
+    color: #333; /* Color for the username */
+}
+
+#user-posts-title {
+    margin-top: 40px; /* Space above user posts title */
+}
+
+#user-posts .card {
+    margin-bottom: 20px; /* Spacing between post cards */
+}

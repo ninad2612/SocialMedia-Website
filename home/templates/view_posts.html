@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block start %}
+    <div class="container mt-5">
+        <h1 class="mb-4">Your Posts</h1>
+
+        {% for post in user_posts %}
+            <div class="card mb-3 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">{{ post.caption }}</h5>
+                    
+                    {% if post.content_image %}
+                        <img src="{{ post.content_image.url }}" class="card-img-top" alt="Post Image" style="object-fit: cover; height: 300px;">
+                    {% elif post.content_video %}
+                        <video controls class="card-img-top" style="height: 300px; object-fit: cover;">
+                            <source src="{{ post.content_video.url }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    {% endif %}
+                    
+                    <p class="card-text mt-2">Posted by <strong>{{ post.user.username }}</strong> on {{ post.created_at|date:"F j, Y, g:i a" }}</p>
+                </div>
+            </div>
+        {% empty %}
+            <div class="alert alert-info" role="alert">No posts available.</div>
+        {% endfor %}
+
+        <a href="{% url 'home' %}" class="btn btn-primary">Back to Home</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block start %}
+<div class="profile-container">
+    <div class="profile-picture">
+        {% if profile.profile_picture %}
+            <img src="{{ profile.profile_picture.url }}" alt="Profile Picture" class="profile-image"/>
+        {% else %}
+            <p>No Profile Image</p>
+        {% endif %}
+    </div>
+    <div class="username-container">
+        <div class="username">
+            Welcome, {{ user.username }}!
+        </div>
+        <a href="/logout/" class="btn btn-primary logout-btn">Logout</a>
+    </div>
+</div>
+
+
+
+<!-- Button Container -->
+<div class="button-container">
+    <a href="{% url 'upload_post' %}" class="btn btn-primary">Post a Picture/Video</a>
+    <a href="{% url 'view_posts' %}" class="btn btn-primary">View Your Posts</a> 
+    <a href="{% url 'search_users' %}" class="btn btn-primary">Search Users</a>
+    
+</div>
+
+    <!-- Feed Section -->
+    <h2 class="feed-title">Your Feed</h2>
+    <div class="container">
+        <div class="row">
+            {% if user_posts %}
+                {% for post in user_posts %}
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ post.caption }}</h5>
+                                {% if post.content_image %}
+                                    <img src="{{ post.content_image.url }}" class="card-img-top" alt="Post Image">
+                                {% elif post.content_video %}
+                                    <video controls class="card-img-top">
+                                        <source src="{{ post.content_video.url }}" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                {% endif %}
+                                <p class="card-text">Posted on {{ post.created_at }}</p>
+                                <p class="card-text">By {{ post.user.username }}</p> <!-- Display the username of the post's author -->
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No posts available from users you follow.</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

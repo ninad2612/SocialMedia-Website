@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Website{% endblock %}</title>
+
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!-- Main Content Area -->
+    <main>
+        {% block start %}
+        <!-- Content from child templates will be inserted here -->
+        {% endblock %}
+    </main>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+    </div>
+
+    <!-- Include JavaScript file -->
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

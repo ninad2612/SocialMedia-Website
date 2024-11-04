@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block start %}
+    <h1>Upload a Post</h1>
+    <form method="POST" enctype="multipart/form-data" id="upload-form">
+        {% csrf_token %}
+        <label for="content_image">Image:</label>
+        <input type="file" name="content_image" accept="image/*" id="content_image"><br>
+        
+        <label for="content_video">Video:</label>
+        <input type="file" name="content_video" accept="video/*" id="content_video"><br>
+        
+        <label for="caption">Caption:</label>
+        <textarea name="caption" required></textarea><br>
+        
+        <button type="submit">Upload</button>
+    </form>
+    
+    <div class="preview-container">
+        <h2>Preview</h2>
+        <img id="image-preview" src="#" alt="Image Preview" style="display:none;">
+        <video id="video-preview" controls style="display:none;">
+            <source src="#" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+{% endblock %}
+

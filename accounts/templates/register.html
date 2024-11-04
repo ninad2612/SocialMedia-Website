@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block start %}
+    <h2>Register</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label>First Name:</label>
+        <input type="text" name="firstname" required><br>
+
+        <label>Last Name:</label>
+        <input type="text" name="lastname" required><br>
+
+        <label>Username:</label>
+        <input type="text" name="username" required><br>
+
+        <label>Password:</label>
+        <input type="password" name="password" required><br>
+
+        <label>Bio:</label>
+        <textarea name="bio"></textarea><br>
+
+        <label>Date of Birth:</label>
+        <input type="date" name="dob"><br>
+
+        <label>Profile Picture:</label>
+        <input type="file" name="profile_picture"><br>
+        
+        <button type="submit">Register</button>
+    </form>
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+    
+    <p><a href="/login/">Already a user? Login here.</a></p> <!-- Link to login page -->
+
+
+{%  endblock %}
