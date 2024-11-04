@@ -1,7 +1,7 @@
 {
     "builds": [{
         "src": "usermodel_withextra/wsgi.py",
-        "use": "@vercel/vercel-python-wsgi",
+        "use": "@vercel/python",
         "config": { "maxLambdaSize": "15mb" }
     }],
     "routes": [
