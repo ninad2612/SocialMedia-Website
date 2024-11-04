@@ -5,3 +5,4 @@ six
 sqlparse
 tzdata
 Pillow
+gunicorn
